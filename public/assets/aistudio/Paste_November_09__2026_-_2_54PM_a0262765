@@ -1,0 +1,772 @@
+# MASTER DEVELOPMENT PROMPT: MIND EXPEDITION – LIVE QUIZ COMPETITION PLATFORM
+
+Develop a professional, interactive and visually engaging live quiz competition platform named **MIND EXPEDITION**.
+
+The platform should provide the experience of a professionally conducted televised quiz competition, with a quizmaster presenting questions, participants or teams seated in front of a large display, audience participation and real-time score updates.
+
+The system must be flexible enough to conduct multiple quiz competitions, with different participants, question banks, numbers of rounds, round formats, time limits and scoring systems.
+
+The platform must not be restricted to the five rounds described below. The administrator must be able to create additional rounds, select the type and number of rounds, configure their rules and scoring, and arrange them in any desired sequence.
+
+Do not create a static demonstration or a simple quiz website. Develop a functional live quiz management system with synchronized real-time interactions.
+
+# PART 1: OVERALL PLATFORM ARCHITECTURE
+
+Create three separate, interconnected interfaces.
+
+## A. Administrator Panel
+
+The administrator should be able to:
+
+- Create multiple independent quiz competitions.
+- Edit, duplicate, schedule, activate, complete or archive quizzes.
+- Add or remove participants and teams.
+- Create different rounds for different competitions.
+- Configure question banks.
+- Set scoring systems and time limits.
+- Upload images, audio, videos and other question-related media.
+- Configure buzzer functionality.
+- Monitor live scores and competition progress.
+- View the final results and download reports.
+
+Every quiz must have its own independent question bank, participant records, round settings, scores and results.
+
+Changes made to one quiz must not affect another quiz.
+
+## B. Quizmaster Console
+
+Create a dedicated interface for the quizmaster.
+
+The quizmaster should be able to:
+
+- Start and end the competition.
+- Select the active round.
+- Display the next question on the main screen.
+- Start, pause, resume and reset the timer.
+- Display questions one at a time.
+- Reveal answers when required.
+- Mark answers as correct, incorrect or unanswered.
+- Award or deduct marks.
+- Activate and deactivate the buzzer.
+- View the order in which participants press the buzzer.
+- Select the next participant to answer when applicable.
+- Move to the next question or round.
+- View live scores and rankings.
+- Make authorized manual score corrections with a recorded reason.
+- Pause the entire competition in case of technical problems.
+
+The quizmaster must have full control over the competition. No question or answer should advance automatically unless the quizmaster has enabled that option.
+
+## C. Main Display / Projector Interface
+
+This interface will be displayed on a large screen or projector in front of the participants and audience.
+
+Design it for a 16:9 display, preferably 1920 × 1080 resolution, with responsive scaling.
+
+Display the following information:
+
+- MIND EXPEDITION title and branding.
+- Competition name.
+- Current round name and number.
+- Current question.
+- Participant or team name.
+- Countdown timer.
+- Current scores.
+- Buzzer results and participant queue.
+- Round completion status.
+- Leaderboard.
+- Final winner announcement.
+
+Use large, readable typography and high-contrast colours.
+
+The display should have attractive transitions, animations and sound effects appropriate for a professional quiz competition.
+
+The audience screen must be read-only. It must not display administrative controls, answer keys or confidential question-bank information.
+
+# PART 2: QUIZ CREATION AND ROUND CONFIGURATION
+
+## 1. Create multiple quizzes
+
+Provide a **Create New Quiz** button.
+
+When the administrator clicks it, allow the following details to be entered:
+
+- Quiz title.
+- Quiz description.
+- Competition date.
+- Number of participants or teams.
+- Individual or team-based competition.
+- Names of participants or teams.
+- Number of rounds.
+- Round sequence.
+- Maximum marks.
+- Quizmaster name.
+- Competition status.
+
+Examples of separate quizzes:
+
+- MIND EXPEDITION – Pharmaceutics
+- MIND EXPEDITION – General Pharmacy
+- MIND EXPEDITION – Pharmaceutical Sciences
+- MIND EXPEDITION – Intercollegiate Quiz Competition
+- MIND EXPEDITION – Annual College Quiz
+
+Every quiz must function independently.
+
+## 2. Flexible round builder
+
+This is one of the most important platform requirements.
+
+Do not hard-code the five rounds given below.
+
+Create a flexible **Round Builder** in the administrator panel.
+
+The administrator must be able to:
+
+- Add as many rounds as required.
+- Select the type of each round.
+- Change the order of rounds.
+- Rename rounds.
+- Set the number of questions.
+- Set the time limit.
+- Assign marks for correct answers.
+- Assign negative marks for incorrect answers.
+- Decide marks for unanswered questions.
+- Enable or disable a round.
+- Add bonus questions.
+- Decide whether a round is individual or team-based.
+- Choose whether questions are presented horizontally or consecutively.
+- Configure whether the participant answers verbally or through the mobile interface.
+
+Each round must have its own independent settings.
+
+The administrator should be able to save a round configuration as a reusable template for future competitions.
+
+**Important:** The maximum marks of a quiz must be calculated automatically based on the configured rounds, number of questions and scoring rules. Do not use a fixed maximum score.
+
+# PART 3: DEFAULT FIVE ROUNDS OF MIND EXPEDITION
+
+Create the following five rounds as the default round templates.
+
+The administrator must be able to modify all their parameters before a competition starts.
+
+## ROUND I – BASIC ROUND
+
+<text color="secondary" weight="medium">Default maximum: 50 marks | Time: 30 seconds per question</text>
+
+**Format:**
+
+- Five questions will be asked to each participant or team.
+- Questions will be asked horizontally, one at a time to each team.
+- For example, Question 1 will be asked to Team A, then Team B, then Team C, and so on.
+- After all teams have answered Question 1, Question 2 will begin.
+- The quizmaster controls the question sequence.
+
+**Scoring:**
+
+- Correct answer: +10 marks.
+- Incorrect answer: 0 marks.
+- Unanswered question: 0 marks.
+- No negative marking.
+
+**Maximum marks:** 5 × 10 = 50 marks per participant or team.
+
+**Quizmaster controls:**
+
+- Display question.
+- Start 30-second timer.
+- Record the answer as correct or incorrect.
+- Move to the next participant.
+- Move to the next question.
+
+## ROUND II – RAPID FIRE ROUND
+
+<text color="secondary" weight="medium">Default maximum: 50 marks | Total time: 90 seconds per participant or team</text>
+
+**Format:**
+
+- Five questions will be asked to each participant or team.
+- Questions should have one-word or two-word answers.
+- The participant must answer as many questions as possible within 1.5 minutes.
+- Questions should appear one after another.
+- The quizmaster should have the ability to skip a question and move to the next one.
+- The rapid-fire timer should continue running while questions are being asked, unless the quizmaster pauses it.
+
+**Scoring:**
+
+- Correct answer: +10 marks.
+- Incorrect answer: 0 marks.
+- Pass or unanswered question: 0 marks.
+- No negative marking.
+
+**Maximum marks:** 50 marks.
+
+**Additional controls:**
+
+- Display a prominent countdown timer.
+- Show the number of questions attempted.
+- Allow the quizmaster to accept short answers.
+- Allow the quizmaster to mark answers as correct or incorrect.
+- Automatically move to the next question when the quizmaster confirms the answer or selects Skip.
+
+## ROUND III – STRAIGHTFORWARD ROUND
+
+<text color="secondary" weight="medium">Default maximum: 50 marks | Time: 30 seconds per question</text>
+
+**Format:**
+
+- Five questions will be asked to each participant or team.
+- The default mode should allow the quizmaster to ask all five questions to one participant consecutively before moving to the next participant.
+- Provide an alternative setting to present questions horizontally, one at a time to each team.
+- Questions should be straightforward and based on subject knowledge.
+- All questions should have a 30-second time limit.
+
+**Scoring:**
+
+- Correct answer: +10 marks.
+- Incorrect answer: 0 marks.
+- Unanswered question: 0 marks.
+- No negative marking.
+
+**Maximum marks:** 50 marks.
+
+The quizmaster should have manual answer evaluation controls.
+
+## ROUND IV – VISUAL ROUND
+
+<text color="secondary" weight="medium">Default maximum: 40 marks | Time: 30 seconds per question</text>
+
+**Format:**
+
+- Four questions will be asked to each participant or team.
+- Questions will be asked horizontally, one at a time to each team.
+- Each question must contain an image, photograph, diagram, illustration, graph or other relevant visual material.
+- The participant must identify the object, interpret the image or answer a question related to the visual.
+
+**Possible visual question categories:**
+
+- Identify a pharmaceutical instrument.
+- Identify a dosage form.
+- Identify a scientist or important personality.
+- Identify a medicinal plant.
+- Identify a chemical structure.
+- Identify a laboratory apparatus.
+- Interpret a pharmaceutical diagram.
+- Identify a drug delivery system.
+- Identify a medical device.
+- Interpret a graph or experimental result.
+
+**Scoring:**
+
+- Correct answer: +10 marks.
+- Incorrect answer: -5 marks.
+- Unanswered question: 0 marks.
+
+**Maximum possible marks:** 40 marks.
+
+**Quizmaster controls:**
+
+- Upload or select an image.
+- Display the image on the projector.
+- Start the 30-second timer.
+- Accept the participant's verbal answer.
+- Award or deduct marks.
+- Move to the next team.
+
+Ensure that uploaded images are displayed clearly and proportionally without distortion.
+
+## ROUND V – CURRENT AFFAIRS IN PHARMACEUTICAL SCIENCES
+
+<text color="secondary" weight="medium">Default maximum: 40 marks | Time: 30 seconds per question</text>
+
+**Format:**
+
+- Four questions will be asked to each participant or team.
+- Questions will be asked horizontally, one at a time to each participant.
+- Questions should focus on recent developments and important events related to pharmaceutical sciences.
+
+**Suggested subject areas:**
+
+- Recent pharmaceutical discoveries.
+- New drug approvals.
+- Drug regulatory developments.
+- CDSCO and international regulatory developments.
+- Pharmaceutical industry updates.
+- Drug delivery innovations.
+- Biotechnology and pharmaceutical research.
+- Pharmacovigilance.
+- Public health developments.
+- WHO initiatives.
+- Important pharmaceutical conferences and scientific achievements.
+- Recent developments in clinical research.
+
+**Scoring:**
+
+- Correct answer: +10 marks.
+- Incorrect answer: -5 marks.
+- Unanswered question: 0 marks.
+
+**Maximum possible marks:** 40 marks.
+
+**Question management:**
+
+- Allow the administrator to enter current-affairs questions manually.
+- Permit importing questions from an Excel or CSV file.
+- Optionally provide AI-assisted question generation from verified current-affairs material.
+- For AI-generated current-affairs questions, store the source URL and publication date for administrator verification.
+- Do not automatically add unverified or outdated information to a live quiz.
+- Allow the quizmaster to reveal the correct answer after the response.
+
+# PART 4: ADDITIONAL OPTIONAL QUIZ ROUNDS
+
+Provide an expandable library of additional rounds.
+
+The administrator should be able to select any combination of rounds, use the same type multiple times with different questions, or create a completely new round.
+
+The following formats should be available:
+
+## 1. BUZZER ROUND – FASTEST FINGER FIRST
+
+<badge color="success">Essential feature</badge>
+
+This is a highly important round and must be implemented with particular attention to real-time synchronization and response fairness.
+
+### Basic mechanism
+
+Each participant or team must have access to a unique mobile interface through their smartphone.
+
+Participants will be seated in front of the main display.
+
+When the quizmaster displays a question and activates the buzzer, all registered participants will see a prominent button on their mobile screens labelled:
+
+**BUZZ IN!**
+
+When a participant presses this button, the system must immediately register the response.
+
+### Buzzer operation
+
+1. The quizmaster displays the question on the main screen.
+2. The quizmaster clicks **Activate Buzzer**.
+3. All participants' mobile buzzer buttons become active.
+4. Participants press the button as quickly as possible.
+5. The server records each accepted press using an authoritative server timestamp and a unique sequence number.
+6. The participant who presses first receives the first opportunity to answer.
+7. The main display prominently shows the first participant's name or team name.
+8. The main display also shows the names of all other participants who pressed the button, arranged in their order of response.
+9. The quizmaster can view the complete response queue.
+10. The quizmaster invites the first participant to answer.
+
+**Example of main-screen display:**
+
+<box border radius="lg" padding={3} gap={3}>
+  <title size="xl" color="default" textAlign="center">MIND EXPEDITION</title>
+  <title size="lg" textAlign="center" color="success">BUZZER ACTIVATED!</title>
+  <box background="rgba(46,160,100,0.10)" radius="lg" padding={3} align="center" gap={1}>
+    <caption color="success" weight="semibold">FIRST TO BUZZ</caption>
+    <title size="2xl" color="success">TEAM ALPHA</title>
+    <title size="sm" color="secondary">1st position</title>
+  </box>
+  **Other participants in the queue**
+  <row justify="between">
+    <text weight="medium">2. Team Beta</text>
+    <badge color="info">2nd</badge>
+  </row>
+  <row justify="between">
+    <text weight="medium">3. Team Gamma</text>
+    <badge>3rd</badge>
+  </row>
+  <row justify="between">
+    <text weight="medium">4. Team Delta</text>
+    <badge>4th</badge>
+  </row>
+  <caption color="secondary">Illustrative display only. Actual names will be displayed automatically.</caption>
+</box>
+
+### Buzzer scoring and answer opportunity
+
+The administrator must be able to configure:
+
+- Marks for the first correct answer.
+- Negative marks for an incorrect answer.
+- Marks for an unanswered question.
+- Whether the next participant in the queue gets an opportunity after an incorrect answer.
+- Maximum number of answer attempts per question.
+- Time allowed to answer after buzzing.
+- Whether the buzzer can be activated again after all participants in the queue have answered.
+
+Suggested default scoring:
+
+- Correct answer: +10 marks.
+- Incorrect answer: -5 marks.
+- No answer within the permitted time: configurable, default 0.
+
+The queue must preserve the original order in which participants pressed the button.
+
+### Technical requirements for buzzer functionality
+
+- Use real-time server synchronization rather than relying on mobile-device clocks.
+- Use an atomic server-side transaction or equivalent mechanism to establish the order of buzzer presses.
+- Prevent duplicate buzzer registration from the same participant for the same question.
+- Provide immediate visual and vibration feedback on the participant's phone wherever supported.
+- Disable the buzzer immediately when the quizmaster deactivates it.
+- If a participant presses the buzzer after it has been deactivated, do not register the press.
+- Lock the buzzer automatically when the configured response window closes.
+- Record the exact order of accepted presses for transparency.
+- Display connection status for every participant.
+- Handle network delays and disconnections without silently changing an already registered queue.
+
+The platform must be tested on multiple actual mobile devices simultaneously. It must not determine the winner simply by using the local device's timestamp.
+
+## 2. IDENTIFY THE SOUND ROUND
+
+- Play an audio clip on the main display.
+- Participants must identify the sound, drug, instrument, song or phenomenon.
+- Allow the quizmaster to configure the number of audio attempts.
+- Provide a sound playback and replay control.
+- Allow the answer to be given verbally or through the buzzer.
+- Scoring must be configurable.
+
+## 3. IDENTIFY THE VIDEO ROUND
+
+- Display a short video clip.
+- Participants must identify the subject or answer a question based on the video.
+- Support common video formats.
+- Allow the quizmaster to pause, play and replay the clip.
+- Provide configurable answering time and marks.
+
+## 4. CONNECT THE CLUES ROUND
+
+- Display two or more clues sequentially.
+- Participants must identify the common connection.
+- Allow the quizmaster to reveal clues one at a time.
+- Configure marks according to the number of clues required.
+- Allow negative marking.
+
+## 5. JUMBLED WORD ROUND
+
+- Display jumbled letters representing a scientific term, drug name, scientist, disease or pharmaceutical concept.
+- Participants must identify the correct word.
+- Support a timer and configurable scoring.
+- Allow the quizmaster to reveal the answer.
+
+## 6. TRUE OR FALSE ROUND
+
+- Present statements on the main screen.
+- Participants can answer using their mobile interface or verbally, as configured.
+- Award marks for correct responses.
+- Configure negative marking if required.
+
+## 7. MULTIPLE-CHOICE ROUND
+
+- Display four options on the main screen.
+- Allow participants to answer through their mobile phones or provide verbal responses.
+- Configure individual or simultaneous response modes.
+- Automatically evaluate answers when mobile response mode is selected.
+
+## 8. PASS-ON ROUND
+
+- One participant receives a question.
+- If unable to answer, the participant can pass the question.
+- The next eligible participant gets an opportunity.
+- Configure the marks awarded to the first participant and subsequent participants.
+- Allow the quizmaster to control the passing sequence.
+
+## 9. BONUS / DOUBLE-POINTS ROUND
+
+- Provide questions carrying special marks.
+- Allow the administrator to define bonus points or double-point multipliers.
+- Display the special scoring rule prominently.
+- Apply the configured scoring automatically.
+
+## 10. WAGER ROUND
+
+- Allow participants or teams to wager a selected number of marks before the question is revealed or answered, according to the selected rules.
+- Set minimum and maximum wager limits.
+- Configure winnings and losses.
+- Display the final score adjustment transparently.
+
+All optional rounds must be independently configurable and must not interfere with other rounds.
+
+# PART 5: PARTICIPANT REGISTRATION AND MOBILE INTERFACE
+
+## 1. Participant registration
+
+The administrator must be able to add:
+
+- Participant name.
+- Team name.
+- Roll number or participant ID, if applicable.
+- Institution or department.
+- Mobile number, if required.
+
+Provide a QR code and unique joining code for each quiz.
+
+Participants should be able to join through their mobile phone browser without installing a separate application.
+
+Once registered, each participant should see only their own mobile quiz interface.
+
+## 2. Mobile participant interface
+
+Design a clean, minimal interface.
+
+During regular rounds, the participant can simply observe the main screen and await their turn.
+
+During buzzer rounds, display a large, easily accessible button:
+
+**BUZZ IN!**
+
+When the buzzer is inactive, the button must remain disabled.
+
+When the quizmaster activates the buzzer, it becomes active automatically.
+
+After the participant presses it:
+
+- Immediately show a confirmation message.
+- Display their registered position in the buzzer queue, if available.
+- Prevent repeated presses for the same question.
+- Show the result of their response when the quizmaster concludes the buzzer sequence.
+
+Do not reveal the correct answer to participants before the quizmaster announces it.
+
+# PART 6: LIVE LEADERBOARD AND SCORING SYSTEM
+
+Create an automatic scoring engine.
+
+The system must calculate scores independently for every participant or team.
+
+For example:
+
+| Team | Round I | Round II | Round III | Round IV | Round V | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| Team Alpha | 40 | 40 | 50 | 30 | 35 | 195 |
+| Team Beta | 50 | 30 | 40 | 40 | 30 | 190 |
+| Team Gamma | 30 | 50 | 40 | 25 | 40 | 185 |
+
+These figures are illustrative.
+
+Requirements:
+
+- Update scores immediately after the quizmaster evaluates an answer.
+- Maintain separate scores for every round.
+- Automatically calculate the cumulative score.
+- Reflect positive and negative marks correctly.
+- Display the current leaderboard.
+- Allow the quizmaster to show or hide the leaderboard after each round.
+- Provide a final leaderboard showing all participants or teams in descending order of marks.
+- Support tied scores.
+- Provide a configurable tie-breaker round.
+- Maintain a complete score-change history.
+- Record manual corrections with the date, time and reason.
+
+The scoring engine must use the settings configured for the active quiz and round. It must not apply fixed scoring rules from another quiz.
+
+# PART 7: QUESTION BANK AND QUESTION MANAGEMENT
+
+Create a dedicated question bank for every quiz.
+
+Allow the administrator to:
+
+- Add questions manually.
+- Import questions from Excel or CSV.
+- Add multiple-choice questions.
+- Add descriptive or verbal-answer questions.
+- Upload images.
+- Upload audio clips.
+- Upload videos.
+- Add answer keys.
+- Add explanations for quizmaster reference.
+- Categorize questions by topic and difficulty.
+- Assign questions to specific rounds.
+- Randomize question sequences where required.
+- Save questions for reuse in future quizzes.
+
+The correct answer and explanation must be accessible to the quizmaster but must not appear on the audience screen or participant mobile interface before the answer is revealed.
+
+Also provide an option to generate questions using AI, subject to teacher or administrator approval.
+
+# PART 8: VISUAL DESIGN AND USER EXPERIENCE
+
+The platform must look like a premium quiz competition rather than an ordinary academic examination application.
+
+## Branding
+
+Platform name: **MIND EXPEDITION**
+
+Suggested tagline:
+
+"Explore Knowledge. Challenge Intelligence. Discover Excellence."
+
+Create an original visual identity using:
+
+- A sophisticated quiz-show theme.
+- Modern typography.
+- Attractive competition graphics.
+- Appropriate animations.
+- Dynamic score displays.
+- Countdown timer animations.
+- Professional sound effects.
+- A distinctive logo featuring exploration, knowledge or intellectual discovery.
+
+The visual theme should be energetic and exciting, but not excessively colourful or cluttered.
+
+Do not copy any proprietary logo, music, graphics, visual assets or distinctive set design from an existing television quiz show.
+
+## Main display
+
+Create separate display layouts for:
+
+1. Opening screen.
+2. Round introduction.
+3. Question presentation.
+4. Image and visual questions.
+5. Buzzer activated screen.
+6. Buzzer winner identification.
+7. Scoreboard.
+8. Round completion.
+9. Final leaderboard.
+10. Winner announcement.
+
+Use appropriate transition animations between these screens.
+
+## Sound effects
+
+Include optional sound effects for:
+
+- Quiz opening.
+- Round transition.
+- Timer countdown.
+- Correct answer.
+- Incorrect answer.
+- Buzzer activation.
+- Buzzer response registration.
+- Final winner announcement.
+
+Allow the administrator to control sound volume and disable effects when necessary.
+
+Use original or properly licensed sound assets.
+
+# PART 9: LIVE SYNCHRONIZATION AND TECHNICAL RELIABILITY
+
+The platform must support multiple participants using their mobile phones simultaneously while the quizmaster controls the competition from another device and the main display operates on a projector-connected computer.
+
+All interfaces must remain synchronized in real time.
+
+Implement:
+
+- Real-time question updates.
+- Real-time timer synchronization.
+- Real-time buzzer registration.
+- Real-time queue updates.
+- Real-time score updates.
+- Real-time leaderboard updates.
+- Participant connection monitoring.
+
+Use a reliable backend such as Firebase, with suitable real-time database functionality, or an equivalent reliable backend.
+
+Important technical requirements:
+
+1. The server must remain the authoritative source for scores, buzzer order and examination state.
+2. Do not rely exclusively on browser-local state.
+3. Do not use participants' mobile-device clocks to determine buzzer priority.
+4. Prevent duplicate answer submissions and buzzer presses.
+5. Preserve all scores and quiz records permanently.
+6. Prevent unauthorized users from changing scores or questions.
+7. Ensure that participants can access only their assigned quiz session.
+8. Ensure that the audience screen is read-only.
+9. Provide a clear indication when a device loses internet connectivity.
+10. Recover gracefully from temporary disconnections without corrupting the competition state.
+
+The buzzer mechanism must use a transaction-based or equivalent atomic registration method to ensure that the first valid press is recorded correctly.
+
+# PART 10: QUIZMASTER CONTROL AND ANCHOR INSTRUCTIONS
+
+Provide an optional private anchor instruction panel for every round.
+
+The administrator should be able to enter instructions for the quizmaster, such as:
+
+- How to introduce the round.
+- How to explain the rules.
+- How to ask questions.
+- What to do when participants provide incorrect answers.
+- Whether participants are allowed to pass.
+- When to reveal the correct answer.
+- How to conclude the round.
+
+These instructions must be visible only to the quizmaster and must not appear on the audience display or participants' phones.
+
+Include controls for:
+
+- Start round.
+- Start question.
+- Start timer.
+- Pause timer.
+- Resume timer.
+- Mark correct.
+- Mark incorrect.
+- Mark unanswered.
+- Reveal answer.
+- Next question.
+- Next participant.
+- Next round.
+- Pause entire quiz.
+- End quiz.
+
+The quizmaster must always be able to intervene manually.
+
+# PART 11: FINAL RESULTS AND REPORT GENERATION
+
+After the competition is completed, automatically generate a final results report.
+
+The report should include:
+
+- Competition name and date.
+- Participant or team details.
+- Round-wise marks.
+- Total marks.
+- Negative marking details.
+- Final rankings.
+- Correct and incorrect answers.
+- Buzzer performance, where applicable.
+- Winner and runner-up details.
+
+Allow administrators to download the report in Excel and PDF formats.
+
+Also provide a printable final scoreboard for display or announcement during the prize distribution ceremony.
+
+# PART 12: FINAL DEVELOPMENT AND ACCEPTANCE REQUIREMENTS
+
+Build the complete application with the following priorities:
+
+**Priority 1:** Multiple quiz creation and independent quiz management.
+
+**Priority 2:** Flexible round builder with customizable rounds, questions, timings and scoring.
+
+**Priority 3:** Fully functional buzzer mechanism with accurate first-press identification and ordered queue display.
+
+**Priority 4:** Synchronization between the quizmaster console, main projector display and participants' mobile phones.
+
+**Priority 5:** Automatic scoring, leaderboard and final result generation.
+
+**Priority 6:** Professional MIND EXPEDITION branding and user experience.
+
+Do not create only a visual prototype. All buttons, timers, scoring controls, mobile interactions, quiz management functions and database operations must perform their intended actions.
+
+Before declaring the application complete, test it using multiple mobile phones simultaneously, a separate quizmaster device and a projector/display browser.
+
+Verify in particular that:
+
+- The buzzer identifies the genuinely first registered participant.
+- The remaining participants appear in the correct order.
+- No duplicate buzzer presses are recorded.
+- Scores update immediately.
+- Negative marking is calculated correctly.
+- Different quizzes maintain independent scores and settings.
+- The quiz can be paused and resumed without losing progress.
+- The final leaderboard reflects the correct cumulative scores.
+- Reopening the application does not erase completed quiz records.
+
+If any feature cannot be implemented with the available technology, explicitly identify the limitation rather than providing a non-functional interface.
+
+**ULTIMATE OBJECTIVE:**
+
+Create MIND EXPEDITION as a reusable, professionally designed, interactive live quiz competition platform that can be used for college-level, intercollegiate, departmental and other academic competitions, with complete flexibility in selecting rounds, scoring, participants and quiz formats.

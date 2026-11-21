@@ -1,0 +1,6 @@
+{
+  "name": "MIND EXPEDITION – Live Quiz Competition Platform",
+  "description": "Professional, interactive live quiz competition platform with synchronized multi-device buzzer, quizmaster console, main projector interface, flexible round builder, and real-time leaderboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
